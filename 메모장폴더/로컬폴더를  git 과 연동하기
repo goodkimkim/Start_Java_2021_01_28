@@ -1,0 +1,26 @@
+로컬폴더를  git 과 연동하기
+1. 초기화시작    git init
+2. 계정 연결
+
+git config --local user.name
+
+git config -- local user.email  xxxxx
+
+3. repossitory  주소 연결
+
+git rimote add oringin .....git (주소복사
+)
+
+
+4.로컬폴더 프로젝트를 업로드 준비
+
+
+git add .    :현재 폴더의 모든 것을 등록할 업로드 하도록 압축하라
+
+5.업로드 커멘트 설정 
+git commit -m first
+
+5. 압축된 로컬 퍼ㅗㄹ더를 업로드
+git push -u origin master
+
+

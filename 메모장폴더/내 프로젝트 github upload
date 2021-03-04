@@ -1,0 +1,60 @@
+내 프로젝트 github upload
+
+
+1.github repositoty 생성
+  https://github.com/goodkimkim에서 
+   뉴+가서  레포지서터리하기
+
+
+
+2.local  폴더 repo 선언
+lcal 폴더에서 우측 마우스  깃 배쉬 히어
+=lcal repositoty 만들기 로컬폴더에서 g깃 배시 히어
+git init 입력
+
+
+
+3.config 설정
+로컬 리포지와 리모토 리\포지 권한 보안 설정
+git config --local user.name goodkimkim  (-다음 로컬 붙이기 띄면 안됨)
+git config --local user.email goodkimkim@hanmail.net
+
+4. remote 설정
+git remote add origin 주소 복사한 다음 시프트 +인서트 눌르기(윈도우는 붙여넣기 컨트롤 부이 안먹으니깐 리눅스 명령어로 시프트 인서트 눌러줘야함)
+
+
+깃허ㅓ브 업\로드 금지 설정
+touch .gitignore 써주기(.붙여서) 로컬 폴더에 .gitignore 파일 생성 \입력
+이그노어 문서파일 우측 마우스 서브라임텍스트로 열어주기
+업로드 금지 목록 생성
+(((((((※ github 업로드 금지 설정
+로컬 폴더에 .gitignore 파일 생성
+	touch .gitignore
+	업로드 금지 목록작)))))))
+------------------------------------------------------------(README.md를 만들때 " 변환"
+git add .
+git commit -m "README.md 파일 생성"
+git push -u origin 
+
+
+
+
+
+
+
+)
+5. 파일 add
+git add . (띄어쓰고 . 현재 폴더의 모든 파일 업로드하기 위해 압축하라 대신 이그노어에 파일 빼고 )
+
+6.commit 설정
+현재 시점에 업로드 한 시점에 업로드한 커멘트 설정하는 것
+git commit -m first
+
+
+7.push
+git push -u origin master 
+
+(여기서 오리진이라는건 아가 복사한 주소
+git remote add origin https://github.com/goodkimkim/git-_test.git
+)
+

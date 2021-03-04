@@ -1,0 +1,31 @@
+화면 상단에 여러 항목이 있고 
+항목을 선택했을때 
+내용을 달리 보여주는 기능을  TAB Menu  라고 한다.
+
+http://oracle.com
+url:인터넷 주소 체계
+Https:Hyper text transfer protocol security
+
+Eclipse.org  들어가서
+enterprise java다운
+(코딩을 해서  javac를 이용해서 컴퓨터가 이해하는 기계언어인 컴파일러 해주면
+너무 번거로워서 이클립스로 하면 다이렉트로 됨)
+압축 바로 풀지말고 이클립스 클릭 오른쪽 버튼 누르고 7집 나오면 오른쪽에 7-ZIP으로 해서 여기에 압축풀기함
+이클립스 폴더 비즈워크 폴더로 이동 
+
+구글 d2coding  검색
+네이버로 감
+다운로드  d2coding ver 1.3.2 zip 파일 받기
+똑같이 압축 풀기 (7집으로 그러면 3개폴더 생성 ) 역시 비즈워크로 가서 
+폰드폴더 만들고 붙여넣기
+dwcodingall 우측 마우스 
+모든 사용자용으로 설치 누름
+
+이클립스.exe 실행
+프로젝트 저장 위치 지정(자바워크에 javaworks 폴더 만들어놓기
+)
+
+이클립스 작업표시줄에 고정
+실행
+-window-preference-general-workspace-other-utf-8-apply
+

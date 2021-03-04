@@ -1,0 +1,14 @@
+ eclispse를 사용한 java project 생성
+ 1.project 생성
+    가. new/ java project 
+    - project는 어플리케이션 이름이 됨
+    - 영문, 숫자 등을 조합하여 만듦
+
+
+ 2. package 생성
+    가. 프로젝트 생성후  최초 package 생성
+    나. package명명 방법 회사의 Domain Name을 거꾸로 시작하여 작성
+        예) http://callor.com 이면  com.callor.hello
+        -3단계 package라고 한다.
+
+        

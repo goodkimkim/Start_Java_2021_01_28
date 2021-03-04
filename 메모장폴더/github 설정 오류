@@ -1,0 +1,27 @@
+github 설정 오류
+git remote add  oringin 주소
+
+1. error : remore origin already eixist.
+ 이미 리모트 주소를 등록했는데 또다시 등록하려고 할때 
+ 등록 리모트 주소가 잘못되어 다시 등록하려고 하는데 이미 주소가 등록되지 않는 현상
+ ---> 리모트 주소를 삭제(git remote remove origin)하고 다시 등록한다
+(git remote add origin 주소복사한거htt......git)
+https://github.com/goodkimkim/Biz_2021_01_403_Java.git
+
+clear누르면 다 사라짐
+
+화살표 위에꺼 누르면 옛날꺼 내가 타자친거 나오고 아래도 그렇고
+
+
+git add .
+git commit -m "README 또 변경""
+git push
+(주소가 삭제되었다면 origin master넣고
+)
+
+
+띄어쓰기가 중요하다
+
+
+소스커버 버전컨트롤러( 예전에 커미트 히스토리 되살리는거..예전거..복원
+ )(애드.커밋.푸쉬.)
