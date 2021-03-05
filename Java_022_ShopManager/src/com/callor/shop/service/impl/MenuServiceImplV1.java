@@ -23,7 +23,7 @@ public class MenuServiceImplV1 implements MenuService{
 	 * 
 	 */
 	private final Scanner scan;
-	public MenuServiceImplV1() {//생성자=conductor.컨트롤 스페이스바. 여기서 위에 선언된 객체 선언
+	public MenuServiceImplV1() {
 		scan = new Scanner(System.in);
 	}
 	

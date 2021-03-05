@@ -29,7 +29,7 @@ public class CartServiceImplV1 implements CartService{
 	protected List<CartVO> cartList;
 	
 	private final Scanner scan;
-	public CartServiceImplV1() {//생성자 메서드.
+	public CartServiceImplV1() {
 		scan = new Scanner(System.in);
 		cartList = new ArrayList<CartVO>();
 	}
@@ -51,7 +51,7 @@ public class CartServiceImplV1 implements CartService{
 		
 		System.out.println("추가할 상품의 구매 수량을 입력하세요");
 		
-		Integer intQty = 0;//숫자와 금액이 커질 수있으니.Integer선언
+		Integer intQty = 0;
 		while(true) {
 			System.out.println(">> ");
 			String strQty = scan.nextLine();
@@ -139,7 +139,6 @@ public class CartServiceImplV1 implements CartService{
 	public void printAllCart() {
 
 		this.printHeader();
-		// private void으로 선언된 class는 여기class만 활용됨. this(여기 class)..여기서 선언된 header
 
 		// 카트리스트의 상품개수를 
 		//		계산하여 nSize에 저장
