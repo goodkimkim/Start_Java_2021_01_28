@@ -23,6 +23,7 @@ public class MenuServiceImplV1 implements MenuService{
 	 * 
 	 */
 	private final Scanner scan;
+	
 	public MenuServiceImplV1() {
 		scan = new Scanner(System.in);
 	}

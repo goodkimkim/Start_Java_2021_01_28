@@ -12,6 +12,7 @@ public class RndServiceImplV1 {
 	// makeRnd()와 saveFileRnd() method가 공용으로
 	// 사용할 객체이므로 인스턴스 객체변수로 선언
 	private List<Integer> intList;
+	
 	public RndServiceImplV1() {
 		intList = new ArrayList<Integer>();
 	}

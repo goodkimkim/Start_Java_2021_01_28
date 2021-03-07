@@ -15,7 +15,7 @@ public class CartEx_02 {
 		
 		while(true) {
 			Integer menuItem = mService.selectMenu();
-			if(menuItem == null) { // 널값 : 아무것도 아닌값
+			if(menuItem == null) { // 널값 : 아무것도 아닌값 //메뉴impV1에 quit를입력하면 return null로 옴
 				break;
 			} else if (menuItem == Values.MENU_INPUT) {
 				cService.inputCart();
@@ -25,7 +25,7 @@ public class CartEx_02 {
 				cService.printUserCart();
 			}
 		}
-		System.out.println("업무종료!! 야 퇴근이다!!");
+		System.out.println("업무종료!! 야 퇴근이다!!");//quit로 break;된거라 while문 끝...
 	}
 }
 

@@ -29,6 +29,7 @@ public class CartServiceImplV1 implements CartService{
 	protected List<CartVO> cartList;
 	
 	private final Scanner scan;
+	
 	public CartServiceImplV1() {
 		scan = new Scanner(System.in);
 		cartList = new ArrayList<CartVO>();
