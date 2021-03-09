@@ -1,5 +1,8 @@
 package com.callor.score.service.Impl;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -7,12 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.callor.score.model.ScoreVO;
 import com.callor.score.service.ScoreService;
-import com.callor.score.service.ScoreVO;
+import com.callor.score.service.Values;
 
 public class ScoreServiceV1 implements ScoreService {
 
 	private List<ScoreVO> scoreList;
+
 	private String fileName;
 	private Random rnd;
 
@@ -26,23 +31,39 @@ public class ScoreServiceV1 implements ScoreService {
 	@Override
 	public void makeScore() {
 		// TODO Auto-generated method stub
-		rnd = new Random();
+
 		for (int i = 0; i < 20; i++) {
 			Integer num = rnd.nextInt(100) + 1;
 
 			ScoreVO scoreVO = new ScoreVO();
 
-			scoreVO.setNum(num + 1);
+			scoreVO.setNum(i + 1);
+
 			scoreVO.setKor(num);
+
+			num = rnd.nextInt(100) + 1;
 			scoreVO.setEng(num);
+			num = rnd.nextInt(100) + 1;
 			scoreVO.setMath(num);
+			num = rnd.nextInt(100) + 1;
 			scoreVO.setMusic(num);
+			num = rnd.nextInt(100) + 1;
+
 			scoreVO.setHistory(num);
+
+			// 총점
+
+			int sum = scoreVO.getKor() + scoreVO.getEng() + scoreVO.getMath() + scoreVO.getMusic()
+					+ scoreVO.getHistory();
+			scoreVO.setTotal(sum);
+
+			// 평균
+			float avgg = (float) sum / 5;
+			scoreVO.setAvg(avgg);
 
 			scoreList.add(scoreVO);
 
-			System.out.println("점수생성했음");
-
+			System.out.println((i + 1) + "번 순번점수생성했음");
 		}
 
 	}
@@ -60,16 +81,18 @@ public class ScoreServiceV1 implements ScoreService {
 			printer = new PrintWriter(fileWriter);
 
 			int nsize = scoreList.size();
-			for (int i = 0; i < nsize; i++) {
-				System.out.printf("%d\t%d\t%d\t%d\t%d\t%d\n", scoreList.get(i).getNum(), scoreList.get(i).getKor(),
-						scoreList.get(i).getEng(), scoreList.get(i).getMath(), scoreList.get(i).getMusic(),
-						scoreList.get(i).getHistory());
 
-				printer.close();
-				fileWriter.close();
-				System.out.println("파일 저장 완료");
+			for (int i = 0; i < nsize; i++) {
+				ScoreVO scoreVO = scoreList.get(i);
+				printer.printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\t%3.1f\n", scoreVO.getNum(), scoreVO.getKor(),
+						scoreVO.getEng(), scoreVO.getMath(), scoreVO.getMusic(), scoreVO.getHistory(),
+						scoreVO.getTotal(), scoreVO.getAvg());
 
 			}
+			printer.close();
+			fileWriter.close();
+			System.out.println("파일 저장 완료");
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -80,20 +103,63 @@ public class ScoreServiceV1 implements ScoreService {
 	@Override
 	public void loadScoreFromFile() {
 
-		// int total = 0;
-		// int count = 0;
-		/*
-		 * System.out.println("* 전체 장바구니 리스트");
-		 * System.out.println("===============================");
-		 * System.out.println("구매자\t상품명\t수량\t단가\t합계");
-		 * System.out.println("-----------------------------------");
-		 * 
-		 * int nsize = cartList.size(); for (int i = 0; i < nsize; i++) {
-		 * System.out.printf("%s\t%s\t%d\t%d\t%d\n", cartList.get(i).getUserName(),
-		 * cartList.get(i).getProductName(), cartList.get(i).getQty(),
-		 * cartList.get(i).getPrice(), cartList.get(i).getTotal()); total +=
-		 * cartList.get(i).getTotal(); count++; }
-		 * 
-		 * }
-		 */}
+		FileReader fileReader = null;
+		BufferedReader buffer = null;
+
+		try {
+
+			fileReader = new FileReader(fileName);
+
+			buffer = new BufferedReader(fileReader);
+			while (true) {
+				String str = buffer.readLine(); // nextLine()
+				if (str == null) {
+					break;
+				}
+				String scores[] = str.split(" ");
+
+				ScoreVO vo = new ScoreVO();
+
+				scoreList.add(vo);
+
+			}
+			buffer.close();
+			fileReader.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		{
+			System.out.println(Values.dLine);
+			System.out.println("순번\t국어\t영어\t수학\t음악\t국사\t총점\t평균");
+			System.out.println(Values.sLine);
+
+			int nsize = scoreList.size();
+			for (int i = 0; i < nsize; i++) {
+				ScoreVO scoreVO = scoreList.get(i);
+				System.out.printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\t%3.1f\n", scoreVO.getNum(), scoreVO.getKor(),
+						scoreVO.getEng(), scoreVO.getMath(), scoreVO.getMusic(), scoreVO.getHistory(),
+						scoreVO.getTotal(), scoreVO.getAvg());
+
+			}
+			System.out.println(Values.sLine);
+		}
+	}
+
+	@Override
+	public void inputScore() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void printScore() {
+		// TODO Auto-generated method stub
+
+	}
+
 }
