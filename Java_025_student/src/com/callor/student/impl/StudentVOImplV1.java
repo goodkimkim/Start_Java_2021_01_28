@@ -11,7 +11,7 @@ import java.util.Scanner;
 import com.callor.student.model.StudentVO;
 import com.callor.student.service.StudentService;
 
-public class StudentVOImplV1 implements StudentService {
+public class StudentVOImplV1 implements StudentService {//이건 내가만든거고..선생님께서 수업시간때 해주신것이 Java_025A이다
 
 	private List<StudentVO> student;
 	String fileName = "src/com/callor/student/학생정보리스트.txt";

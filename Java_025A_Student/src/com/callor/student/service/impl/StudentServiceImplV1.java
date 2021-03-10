@@ -38,7 +38,7 @@ public class StudentServiceImplV1 implements StudentService {
 				String[] stds = reader.split(":");
 				
 				StudentVO stdVO = new StudentVO(
-						stds[0],
+						stds[0],               
 						stds[1],
 						stds[2],
 						stds[3],
